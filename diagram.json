@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "author": "Haithem BENHALIMA",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -16.67, "left": 96, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 21.87,
+      "left": -67.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 101.82,
+      "left": -38.93,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "led1:A", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "esp:D4", "green", [ "v-152.74", "h218.63", "v151.33" ] ],
+    [ "led1:C", "esp:GND.2", "green", [ "v85.53", "h-3.1" ] ]
+  ],
+  "dependencies": {}
+}
